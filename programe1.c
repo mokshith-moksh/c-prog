@@ -7,6 +7,7 @@ char * activity;
 };
 // Function to create a day
 void create(struct Day * day) {
+    //here you are recieved an adress of structure not the address of calendar
 day -> dayName = (char * ) malloc(sizeof(char) * 20);
 day -> activity = (char * ) malloc(sizeof(char) * 100);
 printf("Enter the day name:");
@@ -20,6 +21,7 @@ scanf(" %[^\n]s", day -> activity);
 void read(struct Day * calendar, int size) {
 for (int i = 0; i < size; i++) {
 printf("Enter details for Day %d:\n", i + 1);
+
 create( & calendar[i]);
 }
 }
